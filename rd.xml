@@ -2,7 +2,7 @@
 <Directives>
   <Application>
     <Assembly Name="WinFormsBlazorHybridAOT" Dynamic="Required All">
-      <Type Name="WinFormsBlazorHybridAOT.Counter" Dynamic="Required All" />
+      <Type Name="WinFormsBlazorHybridAOT.App" Dynamic="Required All" />
     </Assembly>
   </Application>
 </Directives>
