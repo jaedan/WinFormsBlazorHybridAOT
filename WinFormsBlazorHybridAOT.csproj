@@ -10,11 +10,24 @@
     <PublishAot>true</PublishAot>
     <_SuppressWinFormsTrimError>true</_SuppressWinFormsTrimError>
     <CustomResourceTypesSupport>true</CustomResourceTypesSupport>
+    <MetadataUpdaterSupport>false</MetadataUpdaterSupport>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- Required because of https://github.com/dotnet/runtime/issues/79930 -->
+    <IlcArg Include="--nometadatablocking" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebView.WindowsForms" Version="7.0.52" />
-    <PackageReference Include="WinFormsComInterop" Version="0.3.2" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1462.37" />
+    <PackageReference Include="WinFormsComInterop" Version="0.4.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <RdXmlFile Include="Microsoft.AspNetCore.Components.Web.rd.xml" />
+    <RdXmlFile Include="rd.xml" />
   </ItemGroup>
 
 </Project>
